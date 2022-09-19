@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Javascript Executive a Function after Some Time</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <var>
+    
+</var>
+<script>
+function myFunction() {
+    alert('Hello World!');
+}
+
+function myFunctionTwo() {
+    let time = 50;
+    document.getElementById("countdown_display").innerHTML = time;
+    for(let i = 0; i < 10; i ++){
+        setTimeout(function(){
+            if (time <= 0){document.getElementById("countdown_display").innerHTML = "Blastoff!!";}
+            else{document.getElementById("countdown_display").innerHTML = time;}
+            time -= 5;
+        }, i * 5000);
+        
+    }
+}
+</script>
+
+<h1 id="countdown_display">Countdown display</h1>
+<button onclick="myFunctionTwo()">Click Me</button>
+<p><strong>Note:</strong> Alert popup will be displayed 2 seconds after clicking the button.</p>
+</body>
+</html>
